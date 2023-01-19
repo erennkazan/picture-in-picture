@@ -14,6 +14,10 @@ async function selectMediaStream(){
         console.log('whoops,error here:', error);
     }
 }
-
+button.addEventListener('click',async () =>{
+    button.disabled = true;
+    await videoElement.requestPictureInPicture();
+    button.disabled = false;
+});
 //on load
 selectMediaStream();
